@@ -89,6 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     cell.classList.add(aiSymbol.toLowerCase());
                     checkGameStatus();
                 }
+                // Switch back to player turn after AI move
+                currentTurn = playerSymbol;
+                if (gameActive) {
+                    statusDisplay.textContent = `Your turn (${playerSymbol})`;
+                }
             }, 500);
         }
     };
@@ -112,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (roundWon) {
-            statusDisplay.textContent = `Player ${currentTurn} wins!`;
+            statusDisplay.textContent = (currentTurn === aiSymbol) ? 'AI wins!' : `Player ${currentTurn} wins!`;
             gameActive = false;
             winningCombination.forEach(index => {
                 board.children[index].classList.add('winning');
@@ -174,7 +179,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     cell.textContent = aiSymbol;
                     cell.classList.add(aiSymbol.toLowerCase());
                     checkGameStatus();
-                    nextTurn();
+                }
+                // Switch back to player after AI move at start
+                currentTurn = playerSymbol;
+                if (gameActive) {
+                    statusDisplay.textContent = `Your turn (${playerSymbol})`;
                 }
             }, 500);
         }
