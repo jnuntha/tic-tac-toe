@@ -40,7 +40,7 @@ h1 {
 }
 
 #resetBtn {
-    background-color: #28a745;
+    background-color: #ff8c00;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -51,7 +51,7 @@ h1 {
 }
 
 #resetBtn:hover {
-    background-color: #1e7e34;
+    background-color: #e07b00;
 }
 
 .board {
