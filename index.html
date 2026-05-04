@@ -11,6 +11,13 @@
         <h1>Tic Tac Toe</h1>
         <div class="game-info">
             <div class="status" id="status">Player X's turn</div>
+            <div class="player-select">
+                <label for="playerSelect">Play as: </label>
+                <select id="playerSelect">
+                    <option value="X" selected>X (First)</option>
+                    <option value="O">O (vs AI)</option>
+                </select>
+            </div>
             <button id="resetBtn">Reset Game</button>
         </div>
         <div class="board" id="board">
